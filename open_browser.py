@@ -84,7 +84,9 @@ def aux_main():
     # Infinite loop to open urls until script is stopped
     # Initialise a counter, to close the web browser after N openings
     cnt = 0
+    cnt2 = 0
     while True:
+        log.info("Call number: {0}".format(cnt2 + 1))
         random.seed()
         # Select randomly one of the urls
         tmp_url = random.choice(url_dict[xarg.field])
@@ -105,12 +107,14 @@ def aux_main():
             log.info("Waiting {0} s".format(nsec))
             time.sleep(nsec)
         # After 10 openings, close the web browser and reset counter
-        if cnt > 5:
+        if cnt > 4:
+            logging.info("Restarting browser")
             if (use_browser == "google-chrome"):
                 os.system("killall -9 'chrome'")
                 log.info("Terminated web browser")
             cnt = 0
         cnt += 1
+        cnt2 += 1
     return
 
 if __name__ == "__main__":
