@@ -7,7 +7,8 @@ Collection of intermediate tools (to be included in other codes), simple useful 
 Besides [paztronomer website: bash section](https://sites.google.com/view/paztronomer/blog/advanced/bash-examples?authuser=0), 
 there are some tricks to help in some tasks
 
-- List (or execute other command) over a huge amount of files
+- List (or execute other command) over a huge amount of files 
+  (`iname` is case-insensitive, whilst `name` isn't)
   ```bash 
   find . -iname "*.fits" | xargs ls -lrt | wc -l
   find . -iname "*.fits" | exec ls -lrt 
