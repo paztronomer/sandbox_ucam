@@ -3,9 +3,24 @@
 
 Collection of intermediate tools (to be included in other codes), simple useful scripts. Also, below you'll find some `bash`/`zsh` useful tips.
 
+### Git tools
+As we work with many *identities*, levels of granularity, LFS, ... is useful to have quick access information
+
+- Run the below to change the default user/email pair when making a commit, from a shared machine
+  ```bash
+  git config user.name "Francisco Paz-Ch"
+  git config user.email _me_@cam.ac.uk
+  ```
+  If the directories are so organised, consider this [solution](https://www.freecodecamp.org/news/how-to-handle-multiple-git-configurations-in-one-machine/) as well.
+- Clone just a particular branch
+  ```bash
+  git clone --branch <branchname> --single-branch <repo-url>
+  ```
+
+
 ### Bash tools
-Besides [paztronomer website: bash section](https://sites.google.com/view/paztronomer/blog/advanced/bash-examples?authuser=0), 
-there are some tricks to help in some tasks
+In addition to [paztronomer website: bash section](https://sites.google.com/view/paztronomer/blog/advanced/bash-examples?authuser=0), 
+below there are some useful tricks
 
 - List (or execute other command) over a huge amount of files 
   (`iname` is case-insensitive, whilst `name` isn't)
